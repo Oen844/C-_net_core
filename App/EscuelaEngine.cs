@@ -22,13 +22,13 @@ namespace CoreEscuela
             cargarEvaluaciones();
         }
 
-        public Dictionary<string, IEnumerable<ObjetoEscuelaBase> > GetDiccioonarioObjetos()
+        public Dictionary<LlavesDiccionario, IEnumerable<ObjetoEscuelaBase>> GetDiccioonarioObjetos()
         {
-            var diccionario = new Dictionary<string, IEnumerable<ObjetoEscuelaBase> >();
+            var diccionario = new Dictionary<LlavesDiccionario, IEnumerable<ObjetoEscuelaBase>>();
 
-            diccionario.Add("Escuela", new[] { Escuela });
-            diccionario.Add("Cursos", Escuela.Cursos.Cast<ObjetoEscuelaBase>());
-            
+            diccionario.Add(LlavesDiccionario.ESCUELA, new[] { Escuela });
+            diccionario.Add(LlavesDiccionario.CURSO, Escuela.Cursos.Cast<ObjetoEscuelaBase>());
+
             return diccionario;
         }
 
