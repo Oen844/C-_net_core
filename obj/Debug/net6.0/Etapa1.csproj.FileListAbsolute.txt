@@ -1,0 +1,15 @@
+C:\Users\papau\net\Etapa1\bin\Debug\net6.0\Etapa1.exe
+C:\Users\papau\net\Etapa1\bin\Debug\net6.0\Etapa1.deps.json
+C:\Users\papau\net\Etapa1\bin\Debug\net6.0\Etapa1.runtimeconfig.json
+C:\Users\papau\net\Etapa1\bin\Debug\net6.0\Etapa1.dll
+C:\Users\papau\net\Etapa1\bin\Debug\net6.0\Etapa1.pdb
+C:\Users\papau\net\Etapa1\obj\Debug\net6.0\Etapa1.csproj.AssemblyReference.cache
+C:\Users\papau\net\Etapa1\obj\Debug\net6.0\Etapa1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\papau\net\Etapa1\obj\Debug\net6.0\Etapa1.AssemblyInfoInputs.cache
+C:\Users\papau\net\Etapa1\obj\Debug\net6.0\Etapa1.AssemblyInfo.cs
+C:\Users\papau\net\Etapa1\obj\Debug\net6.0\Etapa1.csproj.CoreCompileInputs.cache
+C:\Users\papau\net\Etapa1\obj\Debug\net6.0\Etapa1.dll
+C:\Users\papau\net\Etapa1\obj\Debug\net6.0\refint\Etapa1.dll
+C:\Users\papau\net\Etapa1\obj\Debug\net6.0\Etapa1.pdb
+C:\Users\papau\net\Etapa1\obj\Debug\net6.0\Etapa1.genruntimeconfig.cache
+C:\Users\papau\net\Etapa1\obj\Debug\net6.0\ref\Etapa1.dll
