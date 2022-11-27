@@ -26,6 +26,12 @@ var listEvalXAsig = reporteador.GetListaEvaluaXAsig();
 
 var listaPromXAsig = reporteador.GetPromedioAlumnoPorAsignatura();
 
+foreach (var alum in listaPromXAsig)
+{
+    
+}
+
+
 Printer.Writetitle("Captura una evaluación por consola");
 
 

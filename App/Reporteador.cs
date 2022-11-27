@@ -76,8 +76,9 @@ namespace CoreEscuela
                                        eval.Alumno.Nombre
                                    }
                                    into grupoEvalsAlumno
-                                   select new 
+                                   select new AlumnoPromedio
                                    {
+                                       
                                        alumnoId = grupoEvalsAlumno.Key.UniqueId,
                                        alumnoNombre = grupoEvalsAlumno.Key.Nombre,
                                        promedio = grupoEvalsAlumno.Average(evaluacion => evaluacion.Nota)
