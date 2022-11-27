@@ -31,31 +31,6 @@ namespace CoreEscuela
             {
                 Printer.Writetitle(obj.Key.ToString());
 
-                // foreach (var val in obj.Value)
-                // {
-                //     if (val is Evaluacion)
-                //     {
-                //         if (imprEval)
-                //         {
-                //             Console.WriteLine(val);
-                //         }
-                //     }
-                //     else if( val is Escuela)
-                //     {
-                //         Console.WriteLine("Escuela: " + val);
-                //     }
-                //     else if(val is Alumno)
-                //     {
-                //         Console.WriteLine("Alumno: " + val.Nombre);
-                //     }
-                //     else 
-                //     {
-                //         Console.WriteLine(val);
-                //     }
-                // }
-
-
-
                 foreach (var val in obj.Value)
                 {
                     switch (obj.Key)

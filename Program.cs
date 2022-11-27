@@ -6,7 +6,7 @@ using CoreEscuela.Util;
 using static System.Console;
 
 
-AppDomain.CurrentDomain.ProcessExit += AccionDelEvento;
+//AppDomain.CurrentDomain.ProcessExit += AccionDelEvento;
 
 
 var engine = new EscuelaEngine();
@@ -18,7 +18,16 @@ Printer.Writetitle("Bienvenidos a la escuela");
 
 var reporteador = new Reporteador(engine.GetDiccioonarioObjetos());
 
-reporteador.GetListaEvaluaciones();
+var evalList = reporteador.GetListaEvaluaciones();
+
+var listaAsg = reporteador.GetListaAsignaturas();
+
+var listEvalXAsig = reporteador.GetListaEvaluaXAsig();
+
+var listaPromXAsig = reporteador.GetPromedioAlumnoPorAsignatura();
+
+Printer.Writetitle("Captura una evaluación por consola");
+
 
 
 // ImprimirCursosEscuela(engine.Escuela);
