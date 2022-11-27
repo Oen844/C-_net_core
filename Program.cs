@@ -2,35 +2,35 @@
 using CoreEscuela.Entidades;
 using CoreEscuela;
 using CoreEscuela.Util;
+//using CoreEscuela.App;
 using static System.Console;
 
 
 AppDomain.CurrentDomain.ProcessExit += AccionDelEvento;
 
 
-
 var engine = new EscuelaEngine();
 engine.Inicializar();
-
 
 
 Printer.DrawLine(20);
 Printer.Writetitle("Bienvenidos a la escuela");
 
+var reporteador = new Reporteador(engine.GetDiccioonarioObjetos());
+
+reporteador.GetListaEvaluaciones();
 
 
+// ImprimirCursosEscuela(engine.Escuela);
+// var listaObjetos = engine.GetObjetosEscuela(
+//     out int conteoEvaluaciones,
+//     out int conteoAlumnos,
+//     out int conteoAsignaturas,
+//     out int conteoCursos
+//     );
 
-
-ImprimirCursosEscuela(engine.Escuela);
-var listaObjetos = engine.GetObjetosEscuela(
-    out int conteoEvaluaciones,
-    out int conteoAlumnos,
-    out int conteoAsignaturas,
-    out int conteoCursos
-    );
-
-var dictmb = engine.GetDiccioonarioObjetos();
-engine.imprimirDiccionario(dictmb, true);
+// var dictmb = engine.GetDiccioonarioObjetos();
+// engine.imprimirDiccionario(dictmb, true);
 
 // var listaIlugar = from obj in listaObjetos
 //                   where obj is iLugar

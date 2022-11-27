@@ -5,9 +5,7 @@ using System.Threading.Tasks;
 
 namespace CoreEscuela.Entidades
 
-
 {
-
     public enum LlavesDiccionario
     {
         ESCUELA,
@@ -15,6 +13,5 @@ namespace CoreEscuela.Entidades
         ALUMNO,
         ASIGNATURA,
         EVALUACION
-    }
-    
+    }  
 }
