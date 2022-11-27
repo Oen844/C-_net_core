@@ -25,6 +25,8 @@ var listaObjetos = engine.GetObjetosEscuela(
     out int conteoCursos
     );
 
+var dictmb = engine.GetDiccioonarioObjetos();
+
 // var listaIlugar = from obj in listaObjetos
 //                   where obj is iLugar
 //                   select (iLugar)obj;
