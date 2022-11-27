@@ -5,6 +5,10 @@ using CoreEscuela.Util;
 using static System.Console;
 
 
+AppDomain.CurrentDomain.ProcessExit += AccionDelEvento;
+
+
+
 var engine = new EscuelaEngine();
 engine.Inicializar();
 
@@ -26,6 +30,7 @@ var listaObjetos = engine.GetObjetosEscuela(
     );
 
 var dictmb = engine.GetDiccioonarioObjetos();
+engine.imprimirDiccionario(dictmb, true);
 
 // var listaIlugar = from obj in listaObjetos
 //                   where obj is iLugar
@@ -72,6 +77,13 @@ var dictmb = engine.GetDiccioonarioObjetos();
 
 
 //********************************************************************************
+
+void AccionDelEvento(object? sender, EventArgs e)
+{
+    Printer.Writetitle("Saliendo");
+    //Printer.Beep(2000, cantidad: 10);
+    ZeldaSong();
+}
 
 
 

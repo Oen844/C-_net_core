@@ -1,5 +1,7 @@
 using CoreEscuela.Entidades;
+using CoreEscuela.Util;
 using System.Linq;
+
 
 namespace CoreEscuela
 {
@@ -20,6 +22,70 @@ namespace CoreEscuela
             CargaCursos(Escuela);
             cargarAsignaturas();
             cargarEvaluaciones();
+        }
+
+        public void imprimirDiccionario(Dictionary<LlavesDiccionario, IEnumerable<ObjetoEscuelaBase>> dic,
+            bool imprEval = false)
+        {
+            foreach (var obj in dic)
+            {
+                Printer.Writetitle(obj.Key.ToString());
+
+                // foreach (var val in obj.Value)
+                // {
+                //     if (val is Evaluacion)
+                //     {
+                //         if (imprEval)
+                //         {
+                //             Console.WriteLine(val);
+                //         }
+                //     }
+                //     else if( val is Escuela)
+                //     {
+                //         Console.WriteLine("Escuela: " + val);
+                //     }
+                //     else if(val is Alumno)
+                //     {
+                //         Console.WriteLine("Alumno: " + val.Nombre);
+                //     }
+                //     else 
+                //     {
+                //         Console.WriteLine(val);
+                //     }
+                // }
+
+
+
+                foreach (var val in obj.Value)
+                {
+                    switch (obj.Key)
+                    {
+                        case LlavesDiccionario.EVALUACION:
+                            if (imprEval)
+                            {
+                                Console.WriteLine(val);
+                            }
+                            break;
+
+                        case LlavesDiccionario.ALUMNO:
+                            Console.WriteLine("Alumno: " + val.Nombre);
+                            break;
+
+                        case LlavesDiccionario.CURSO:
+                            var curTmp = val as Curso;
+                            if (curTmp != null)
+                            {
+                                int count = curTmp.Alumnos.Count;
+                                Console.WriteLine("Curso: " + val.Nombre + " Cantidad de Alumnos: " + count);
+                            }
+                            break;
+
+                        default:
+                            Console.WriteLine(val);
+                            break;
+                    }
+                }
+            }
         }
 
         public Dictionary<LlavesDiccionario, IEnumerable<ObjetoEscuelaBase>> GetDiccioonarioObjetos()
@@ -156,13 +222,13 @@ namespace CoreEscuela
         #region Métodos de Carga de Datos
         private void cargarEvaluaciones()
         {
+            var rnd = new Random();
             foreach (var curso in Escuela.Cursos)
             {
                 foreach (var asignatura in curso.Asignaturas)
                 {
                     foreach (var alumno in curso.Alumnos)
                     {
-                        var rnd = new Random(System.Environment.TickCount);
                         for (int i = 0; i < 5; i++)
                         {
                             var ev = new Evaluacion
@@ -170,7 +236,7 @@ namespace CoreEscuela
                                 Nombre = $"{asignatura.Nombre} Ev#{i + 1}",
                                 Alumno = alumno,
                                 Asignatura = asignatura,
-                                Nota = (float)(5 * rnd.NextDouble())
+                                Nota = MathF.Round(((float)(5 * rnd.NextDouble())), 2)
                             };
                             alumno.Evaluaciones.Add(ev);
 
